@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://app.gripsintelligence.com/.well-known/oauth-protected-resource/api/mcp
+status: published
+server:
+  name: Peekd Data MCP
+  transport: http           # Streamable HTTP (JSON-RPC 2.0)
+  url: https://app.gripsintelligence.com/api/mcp
+  auth:
+    type: oauth2
+    flow: authorizationCode      # with PKCE (S256)
+    authorization_server: https://app.gripsintelligence.com/
+    authorization_endpoint: https://app.gripsintelligence.com/authorize
+    token_endpoint: https://app.gripsintelligence.com/token
+    registration_endpoint: https://app.gripsintelligence.com/register   # RFC 7591 dynamic client registration
+    scopes:
+    - mcp
+    resource_metadata: https://app.gripsintelligence.com/.well-known/oauth-protected-resource/api/mcp
+evidence:
+- probe: 'POST /api/mcp initialize -> HTTP 401 Bearer error="invalid_token"; WWW-Authenticate advertises RFC 9728 resource_metadata'
+- 'well-known/grips-intelligence-oauth-protected-resource.json resource_name: "Peekd Data MCP"'
+notes: >-
+  Grips Intelligence publishes an OAuth-protected remote MCP server exposing its
+  e-commerce intelligence data. The endpoint requires a Bearer token obtained via
+  the authorization-code + PKCE flow (scope "mcp") against the app.gripsintelligence.com
+  authorization server, which supports RFC 7591 dynamic client registration. The tool
+  list is behind auth and was not enumerated (no fabricated tools).
+tools: []

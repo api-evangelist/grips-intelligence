@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://gripsintelligence.com/knowledge-base/api
+authentication:
+  style: api-key-header
+  header: grips-api-key
+  ref: authentication/grips-intelligence-authentication.yml
+request:
+  transport: HTTPS POST (JSON body)
+  base_url: https://app.gripsintelligence.com/api/data/v1
+  provider_param: 'provider=pg (query string)'
+  body_shape: >-
+    GraphQL-style envelope: a JSON body with `query` (a query string) and
+    `variables` (a JSON object of filters). Common filter variables across
+    endpoints: `domain` (array), `date` ({gte,lte} YYYY-MM-DD), `country`
+    (ISO 3166-1 alpha-2, e.g. US/GB/DE), and per-endpoint dimensions such as
+    `channel`.
+pagination:
+  style: unknown
+  notes: Not documented in the public knowledge base; endpoints are date-range scoped.
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key contract is documented. Endpoints are read-only analytics
+    queries (POST used to carry the JSON query envelope), so idempotency is not
+    applicable.
+versioning:
+  scheme: uri-path
+  current: v1
+  example: /api/data/v1
+rate_limiting:
+  documented: true
+  signal: none-documented
+  notes: '"Rate limits and quotas apply" per contract; no response headers documented.'
+error_handling:
+  documented: false
+  notes: >-
+    No standard error envelope documented in the public knowledge base; support
+    contact eldar.djafarov@gripsintelligence.com is provided for error issues.
+endpoints:
+- name: Domain Timeseries Performance
+  purpose: Transaction revenue, sessions, conversions, and ad metrics over time.
+- name: CI Channels
+  purpose: Performance across marketing channels (Direct, Organic Search, Paid Search, Referral, Social).
+- name: RI Adwords Over Time
+  purpose: Ad costs, clicks, and cost-per-click over time.
+- name: CI Devices
+  purpose: Performance broken down by device type (mobile/desktop).

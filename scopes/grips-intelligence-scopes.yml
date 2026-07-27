@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://app.gripsintelligence.com/.well-known/oauth-authorization-server
+docs: https://app.gripsintelligence.com/.well-known/oauth-protected-resource/api/mcp
+schemes:
+- name: peekdDataMcpOAuth
+  source: https://app.gripsintelligence.com/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.gripsintelligence.com/authorize
+    tokenUrl: https://app.gripsintelligence.com/token
+scopes:
+- scope: mcp
+  description: >-
+    Access to the Peekd Data MCP server (https://app.gripsintelligence.com/api/mcp)
+    exposing Grips Intelligence e-commerce intelligence data to agents.
+  flows: [authorizationCode]
+  sources: [https://app.gripsintelligence.com/.well-known/oauth-authorization-server]

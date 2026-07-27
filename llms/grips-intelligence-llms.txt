@@ -1,0 +1,27 @@
+# Grips Intelligence
+
+> Grips Intelligence (Peekd) is an e-commerce intelligence platform providing daily online and offline product sales measurement and competitive analysis. It tracks competitor units sold, pricing, revenue per product, top sellers, and new product launches across major retailers, plus domain-level site metrics (revenue, conversion rate, AOV, traffic sources) at SKU and category level. It exposes a REST Data API (API-key auth) and an OAuth-protected remote MCP server ("Peekd Data MCP").
+
+## APIs
+- [Grips Data API (knowledge base)](https://gripsintelligence.com/knowledge-base/api): REST data API at https://app.gripsintelligence.com/api/data/v1 — POST JSON query envelope, `grips-api-key` header. Endpoints: Domain Timeseries Performance, CI Channels, RI Adwords Over Time, CI Devices.
+- [Peekd Data MCP server](https://app.gripsintelligence.com/api/mcp): OAuth-protected (authorization-code + PKCE, scope `mcp`) remote MCP server exposing Grips intelligence data to agents.
+
+## Well-Known
+- [OAuth Authorization Server metadata](https://app.gripsintelligence.com/.well-known/oauth-authorization-server)
+- [OAuth Protected Resource metadata (MCP)](https://app.gripsintelligence.com/.well-known/oauth-protected-resource/api/mcp)
+
+## Docs
+- [Product / help docs](https://gripsintelligence.com/docs)
+- [Data methodology](https://gripsintelligence.com/data-methodology)
+- [Product-level data dictionary](https://github.com/gripsintelligence/productlevel-data-dictionary)
+- [GitHub organization](https://github.com/gripsintelligence)
+
+## Company
+- [Homepage](https://gripsintelligence.com/)
+- [About](https://gripsintelligence.com/about)
+- [Pricing](https://gripsintelligence.com/pricing)
+- [Blog](https://gripsintelligence.com/blog)
+- [Sign up](https://app.gripsintelligence.com/login)
+- [Terms of Service](https://gripsintelligence.com/terms-of-service)
+- [Privacy Policy](https://gripsintelligence.com/privacy-policy)
+- [Contact support](https://gripsintelligence.com/contact-support)

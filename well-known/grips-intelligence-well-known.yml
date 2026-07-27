@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of /.well-known/* on gripsintelligence.com + app.gripsintelligence.com
+hosts:
+- host: https://app.gripsintelligence.com
+  documents:
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 200
+    file: grips-intelligence-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource/api/mcp   # RFC 9728 (MCP resource metadata)
+    status: 200
+    file: grips-intelligence-oauth-protected-resource.json
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://gripsintelligence.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404

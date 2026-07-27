@@ -1,26 +1,115 @@
 aid: grips-intelligence
 name: Grips Intelligence
-description: Grips Intelligence is a company surfaced as a portfolio company of techstars and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Grips Intelligence (Peekd) is an e-commerce intelligence platform that provides
+  daily online and offline product sales measurement and competitive analysis. It
+  tracks competitor metrics — units sold, pricing, revenue per product, top sellers,
+  and new product launches — across major retailers, alongside domain-level site
+  metrics such as revenue, conversion rate, average order value, and traffic sources.
+  Data is available at SKU and category granularity for brand and category
+  benchmarking and new-product opportunity discovery. Grips exposes a REST Data API
+  (API-key authenticated) and an OAuth-protected remote MCP server ("Peekd Data MCP")
+  that make its intelligence data programmatically and agent-accessible.
 url: https://raw.githubusercontent.com/api-evangelist/grips-intelligence/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://gripsintelligence.com/favicon/apple-touch-icon.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - techstars
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: real-api-and-mcp-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- E-commerce Intelligence
+- Competitive Intelligence
+- Market Research
+- Analytics
+- Product Intelligence
+- Retail
+- Data
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Grips Data API
+  description: >-
+    REST data API exposing Grips Intelligence e-commerce analytics. Requests are
+    HTTPS POSTs carrying a GraphQL-style query envelope (query + variables), scoped
+    by domain, date range, and country. Endpoints include Domain Timeseries
+    Performance, CI Channels, RI Adwords Over Time, and CI Devices. Authenticated
+    with a per-account `grips-api-key` header.
+  humanURL: https://gripsintelligence.com/knowledge-base/api
+  baseURL: https://app.gripsintelligence.com/api/data/v1
+  tags:
+  - E-commerce Intelligence
+  - Analytics
+  properties:
+  - type: APIReference
+    url: https://gripsintelligence.com/knowledge-base/api
+  - type: Authentication
+    url: authentication/grips-intelligence-authentication.yml
+  - type: Conventions
+    url: conventions/grips-intelligence-conventions.yml
 common:
 - type: Website
   url: https://gripsintelligence.com/
+- type: DeveloperPortal
+  url: https://gripsintelligence.com/knowledge-base/api
+- type: Documentation
+  url: https://gripsintelligence.com/docs
+- type: APIReference
+  url: https://gripsintelligence.com/knowledge-base/api
+- type: About
+  url: https://gripsintelligence.com/about
+- type: Blog
+  url: https://gripsintelligence.com/blog
+- type: Pricing
+  url: https://gripsintelligence.com/pricing
+- type: SignUp
+  url: https://app.gripsintelligence.com/login
+- type: Login
+  url: https://app.gripsintelligence.com/login
+- type: TermsOfService
+  url: https://gripsintelligence.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://gripsintelligence.com/privacy-policy
+- type: Support
+  url: https://gripsintelligence.com/contact-support
+- type: GitHubOrganization
+  url: https://github.com/gripsintelligence
+- type: MCPServer
+  url: mcp/grips-intelligence-mcp.yml
+- type: Authentication
+  url: authentication/grips-intelligence-authentication.yml
+- type: OAuthScopes
+  url: scopes/grips-intelligence-scopes.yml
+- type: Conventions
+  url: conventions/grips-intelligence-conventions.yml
+- type: WellKnown
+  url: well-known/grips-intelligence-well-known.yml
+- type: DomainSecurity
+  url: security/grips-intelligence-domain-security.yml
+- type: LLMsTxt
+  url: llms/grips-intelligence-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
