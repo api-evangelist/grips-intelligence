@@ -43,7 +43,7 @@ x-tier: profiled
 x-tier-reason: real-api-and-mcp-surface
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-10-06'
 tags:
 - Company
 - E-commerce Intelligence
@@ -79,6 +79,8 @@ apis:
   - type: Conventions
     url: conventions/grips-intelligence-conventions.yml
 common:
+- url: https://gripsintelligence.com/feed
+  type: BlogRSS
 - type: Website
   url: https://gripsintelligence.com/
 - type: DeveloperPortal
